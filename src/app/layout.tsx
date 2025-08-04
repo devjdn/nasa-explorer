@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import {
-    DM_Sans,
-    Geist,
-    Geist_Mono,
-    Host_Grotesk,
-    IBM_Plex_Sans,
-    Inter,
-} from "next/font/google";
+import { DM_Sans, Geist_Mono, Host_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/ui/header";
+import { QueryProvider } from "@/providers/query-provider";
 
 const hostGrotesk = Host_Grotesk({
     variable: "--font-host-grotesk",
@@ -35,11 +29,21 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body
-                className={`${hostGrotesk.variable} ${geistMono.variable} min-h-[200vh] flex flex-col antialiased`}
+                className={`${hostGrotesk.variable} ${geistMono.variable} min-h-screen flex flex-col antialiased`}
             >
-                <ThemeProvider enableSystem defaultTheme="system">
-                    <Header />
-                    <main className="flex-1 py-6">{children}</main>
+                {/* <script
+                    crossOrigin="anonymous"
+                    src="//unpkg.com/react-scan/dist/auto.global.js"
+                /> */}
+                <ThemeProvider
+                    enableSystem
+                    defaultTheme="dark"
+                    forcedTheme="dark"
+                >
+                    <QueryProvider>
+                        <Header />
+                        <main className="flex-1 pb-6">{children}</main>
+                    </QueryProvider>
                 </ThemeProvider>
             </body>
         </html>

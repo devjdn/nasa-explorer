@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { Sparkle } from "lucide-react";
+import { Sparkle, Sparkles } from "lucide-react";
 import * as React from "react";
 import { useInView } from "react-intersection-observer";
 import ThemeSwitcher from "@/components/ui/theme-switcher";
@@ -18,19 +18,21 @@ export default function Header() {
 
             <header
                 className={clsx(
-                    "sticky top-0 z-50 mx-auto w-full h-14 px-4 flex items-center justify-between gap-4 transition-all duration-300",
-                    inView ? "bg-transparent" : "bg-background"
+                    "sticky top-0 z-50 mx-auto w-full h-14 px-4 flex items-center gap-8 transition-all duration-300",
+                    inView
+                        ? "bg-transparent"
+                        : "bg-linear-to-b from-background to-transparent backdrop-blur-sm"
                 )}
             >
                 <Link href={"/"}>
                     <div className="flex items-center gap-2">
-                        <Sparkle size={18} />
+                        <Sparkles size={18} />
                         <span className="font-semibold text-base">
                             NASA API Explorer
                         </span>
                     </div>
                 </Link>
-                <ThemeSwitcher />
+                <nav className="hidden md:flex justify-between items-center"></nav>
             </header>
         </>
     );

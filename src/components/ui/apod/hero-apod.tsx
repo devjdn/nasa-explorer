@@ -1,13 +1,5 @@
 import type { NasaApodResponse } from "@/types/nasa";
 import Image from "next/image";
-import {
-    Dialog,
-    DialogClose,
-    DialogContent,
-    DialogDescription,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import {
     Calendar,
@@ -18,26 +10,22 @@ import {
     VideoIcon,
     Copyright,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
-export default function APODHeroDialog({ image }: { image: NasaApodResponse }) {
+export default function APODHero({ image }: { image: NasaApodResponse }) {
     return (
-        <div className="relative group overflow-hidden rounded-2xl h-[75vh] md:h-[unset] md:aspect-video">
+        <div className="relative group overflow-hidden h-[75vh] md:h-[unset] md:aspect-video">
             {image.media_type === "image" ? (
                 <Image
                     src={image.hdurl || image.url}
                     alt={image.title}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover"
                     priority
                 />
             ) : (
-                <iframe
-                    src={image.url}
-                    className="h-full w-full transition-transform duration-300 group-hover:scale-105"
-                />
+                <iframe src={image.url} className="h-full w-full" />
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 text-white">
                 <h2 className="text-2xl md:text-3xl font-semibold mb-2 line-clamp-2">
                     {image.title}
