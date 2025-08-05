@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Geist_Mono, Host_Grotesk, Inter } from "next/font/google";
+import { Geist_Mono, Host_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/ui/header";
@@ -42,7 +42,7 @@ export default function RootLayout({
                 >
                     <QueryProvider>
                         <Header />
-                        <main className="flex-1 pb-6">{children}</main>
+                        <main className="flex-1">{children}</main>
                     </QueryProvider>
                 </ThemeProvider>
             </body>

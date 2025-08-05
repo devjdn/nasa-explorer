@@ -1,16 +1,18 @@
 "use client";
 
 import clsx from "clsx";
-import { Sparkle, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import * as React from "react";
 import { useInView } from "react-intersection-observer";
-import ThemeSwitcher from "@/components/ui/theme-switcher";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
     const { ref, inView, entry } = useInView({
         threshold: 0,
     });
+    const pathname = usePathname();
+
     return (
         <>
             {/* Sentinel element */}
@@ -18,10 +20,12 @@ export default function Header() {
 
             <header
                 className={clsx(
-                    "sticky top-0 z-50 mx-auto w-full h-14 px-4 flex items-center gap-8 transition-all duration-300",
+                    "top-0 z-50 mx-auto w-full h-14 px-4 flex items-center gap-8 transition-all duration-300",
                     inView
                         ? "bg-transparent"
-                        : "bg-linear-to-b from-background to-transparent backdrop-blur-sm"
+                        : "bg-linear-to-b from-background to-transparent",
+                    { fixed: pathname === "/" },
+                    { sticky: pathname !== "/" }
                 )}
             >
                 <Link href={"/"}>

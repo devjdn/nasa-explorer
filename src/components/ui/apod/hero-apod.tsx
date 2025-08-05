@@ -27,9 +27,9 @@ export default function APODHero({ image }: { image: NasaApodResponse }) {
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 text-white">
-                <h2 className="text-2xl md:text-3xl font-semibold mb-2 line-clamp-2">
+                <h1 className="text-2xl md:text-3xl font-semibold mb-2 line-clamp-2">
                     {image.title}
-                </h2>
+                </h1>
                 <div className="flex items-center flex-wrap gap-2">
                     <Badge variant="secondary">
                         {image.media_type === "image" ? (
