@@ -39,7 +39,7 @@ export function DatePickerForm() {
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="fixed h-10 bottom-8 left-1/2 transform -translate-x-1/2 z-50 flex items-center gap-4"
+                className="fixed h-10 bottom-8 left-1/2 transform -translate-x-1/2 z-50 flex items-center gap-2"
             >
                 <div className="rounded-full bg-secondary/60 border backdrop-blur-md backdrop-saturate-100 shadow-xl">
                     <FormField

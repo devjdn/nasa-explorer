@@ -5,7 +5,6 @@ import Link from "next/link";
 
 export default async function Home() {
     const apod = await fetchApod();
-    console.log(apod);
     return (
         <div className="flex-1 w-full relative pt-14">
             <section className="relative max-w-prose w-full mx-auto space-y-2 text-center z-50 py-14">
