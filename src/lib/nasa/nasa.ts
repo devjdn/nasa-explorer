@@ -1,4 +1,4 @@
-import { NasaApodResponse } from "@/types/nasa";
+import { NasaApodResponse } from "@/types/apod";
 
 const API_KEY = process.env.NEXT_PUBLIC_NASA_API_KEY;
 const BASE_URL = "https://api.nasa.gov";

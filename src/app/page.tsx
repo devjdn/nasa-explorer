@@ -7,16 +7,7 @@ export default async function Home() {
     const apod = await fetchApod();
     console.log(apod);
     return (
-        <div className="min-h-screen w-full relative pt-14">
-            {/* Dark Horizon Glow */}
-            <div
-                className="absolute inset-0 z-0"
-                style={{
-                    background:
-                        "radial-gradient(125% 125% at 50% 90%, #000000 40%, #0d1a36 100%)",
-                }}
-            />
-            {/* Your Content/Components */}
+        <div className="flex-1 w-full relative pt-14">
             <section className="relative max-w-prose w-full mx-auto space-y-2 text-center z-50 py-14">
                 <h1 className="font-bold text-2xl md:text-3xl xl:text-5xl">
                     Exploring space made easy.

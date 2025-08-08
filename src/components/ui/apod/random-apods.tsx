@@ -1,13 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { NasaApodResponse } from "@/types/nasa";
 import { useRandomAPODData } from "@/hooks/use-nasa-apod";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, RefreshCw } from "lucide-react";
+import { RefreshCw } from "lucide-react";
 import clsx from "clsx";
-import { cn } from "@/lib/utils";
 
 export function RandomAPODs() {
     const { data, isLoading, isError, error, refetch, isFetching } =
@@ -20,7 +17,7 @@ export function RandomAPODs() {
                         Randomised APODs
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                        Randomised APODs from NASA's APOD archive.
+                        Randomised APODs from NASA&apos;s APOD archive.
                     </p>
                 </div>
                 <Button

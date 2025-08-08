@@ -1,6 +1,6 @@
 "use client";
 
-import type { NasaApodResponse } from "@/types/nasa";
+import type { NasaApodResponse } from "@/types/apod";
 import Image from "next/image";
 import {
     Dialog,

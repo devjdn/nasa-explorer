@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { NasaApodResponse } from "@/types/nasa";
+import { NasaApodResponse } from "@/types/apod";
 
 const API_KEY = process.env.NEXT_PUBLIC_NASA_API_KEY;
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/ui/header";
 import { QueryProvider } from "@/providers/query-provider";
+import Footer from "@/components/ui/footer";
 
 const hostGrotesk = Host_Grotesk({
     variable: "--font-host-grotesk",
@@ -35,14 +36,11 @@ export default function RootLayout({
                     crossOrigin="anonymous"
                     src="//unpkg.com/react-scan/dist/auto.global.js"
                 /> */}
-                <ThemeProvider
-                    enableSystem
-                    defaultTheme="dark"
-                    forcedTheme="dark"
-                >
+                <ThemeProvider enableSystem defaultTheme="system">
                     <QueryProvider>
                         <Header />
                         <main className="flex-1">{children}</main>
+                        <Footer />
                     </QueryProvider>
                 </ThemeProvider>
             </body>

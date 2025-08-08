@@ -1,19 +1,11 @@
-import type { NasaApodResponse } from "@/types/nasa";
+import type { NasaApodResponse } from "@/types/apod";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import {
-    Calendar,
-    Camera,
-    ExternalLink,
-    X,
-    ImageIcon,
-    VideoIcon,
-    Copyright,
-} from "lucide-react";
+import { Calendar, ImageIcon, VideoIcon, Copyright } from "lucide-react";
 
 export default function APODHero({ image }: { image: NasaApodResponse }) {
     return (
-        <div className="relative group overflow-hidden h-[75vh] md:h-[unset] md:aspect-video">
+        <div className="relative group overflow-hidden h-[75vh] md:h-[85vh] w-full md:aspect-video">
             {image.media_type === "image" ? (
                 <Image
                     src={image.hdurl || image.url}

@@ -11,7 +11,7 @@ function formatDate(date: Date): string {
 export default async function NASAAPODGallery() {
     const today = new Date();
     const tenDaysAgo = new Date(today);
-    tenDaysAgo.setDate(today.getDate() - 10);
+    tenDaysAgo.setDate(today.getDate() - 9);
 
     const range = {
         startDate: formatDate(tenDaysAgo),
@@ -28,7 +28,7 @@ export default async function NASAAPODGallery() {
         : [];
 
     return (
-        <div className="min-h-screen bg-background space-y-12">
+        <div className="min-h-screen bg-background space-y-14">
             {!Array.isArray(apod) && <APODHero image={apod} />}
 
             <div className="w-11/12 mx-auto space-y-12">
