@@ -5,7 +5,8 @@ const API_KEY = process.env.NEXT_PUBLIC_NASA_API_KEY;
 
 async function fetchRandomAPODs(): Promise<NasaApodResponse[]> {
     const response = await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=8`
+        `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=8`,
+        { cache: "no-store" }
     );
 
     if (!response.ok) {

@@ -3,6 +3,8 @@ import { fetchApod } from "@/lib/nasa/nasa";
 import Image from "next/image";
 import Link from "next/link";
 
+export const revalidate = 86400;
+
 export default async function Home() {
     const apod = await fetchApod();
     return (

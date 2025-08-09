@@ -4,6 +4,8 @@ import { fetchApod } from "@/lib/nasa/nasa";
 import { Separator } from "@/components/ui/separator";
 import APODGrid from "@/components/ui/apod/apod-grid";
 
+export const revalidate = 3600;
+
 function formatDate(date: Date): string {
     return date.toISOString().split("T")[0]; // YYYY-MM-DD format
 }

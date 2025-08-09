@@ -18,7 +18,8 @@ export async function fetchApod(
         ? `&start_date=${options.range.startDate}&end_date=${options.range.endDate}`
         : "";
     const res = await fetch(
-        `${BASE_URL}/planetary/apod?api_key=${API_KEY}${dateQuery}${rangeQuery}`
+        `${BASE_URL}/planetary/apod?api_key=${API_KEY}${dateQuery}${rangeQuery}`,
+        { next: { revalidate: 3600 } }
     );
 
     if (!res.ok) {
