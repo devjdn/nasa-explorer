@@ -19,7 +19,7 @@ export async function fetchApod(
         : "";
     const res = await fetch(
         `${BASE_URL}/planetary/apod?api_key=${API_KEY}${dateQuery}${rangeQuery}`,
-        { next: { revalidate: 3600 } }
+        { cache: "no-store" }
     );
 
     if (!res.ok) {
